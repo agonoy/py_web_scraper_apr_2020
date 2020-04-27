@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang=""en>
+  <head>
+      <title>Flask App</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <link rel="stylesheet" href="{{url_for('static',filename='css/main.css')}}">
+
+    <style>
+* {
+  box-sizing: border-box;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 10px;
+<!--  height: 100px; /* Should be removed. Only for demonstration */-->
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1 class="logo">Benie Heroku's web page Covid-19 Tracker</h1>
+        <strong><nav>
+          <ul class="menu">
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('about') }}">About</a></li>
+          </ul>
+        </nav></strong>
+      </div>
+    </header>
+    <div class="container">
+        {%block content%}
+
+
+
+        {%endblock%}
+    </div>
+
+
+<!--  time-->
+<script>
+var dt = new Date();
+document.getElementById("datetime").innerHTML = dt.toLocaleDateString();
+</script>
+  </body>
+</html>

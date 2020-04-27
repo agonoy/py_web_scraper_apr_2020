@@ -1,0 +1,46 @@
+<!--https://webscrp01.herokuapp.com/ | https://git.heroku.com/webscrp01.git-->
+
+
+
+{% extends "layout.html" %}
+
+
+{% block content %}
+<div class="home">
+<!--    <h1>Covid-19 current stats</h1>-->
+
+<!--  <h3> State</h3>-->
+
+
+  <h2>Benie's Tracker</h2>
+    <h2>Covid-19 current Stats</h2>
+    <h3 style="color: red; font-weight: 900;">Date/Time: <span id="datetime"></span></h3>
+
+<div class="row">
+  <div class="column" style="background-color:white;">
+         <h2> State</h2>
+    {%for i in pok%}
+    <h4 style="text-align: center"> {{i[0]}}</h4>
+{%endfor%}
+
+  </div>
+  <div class="column" style="background-color:white;">
+         <h2>Death</h2>
+        {%for i in pok%}
+    <h4 style="text-align: center"> {{i[1]}}</h4>
+{%endfor%}
+<!--    <h2>Column 2</h2>-->
+<!--    <p>Some text..</p>-->
+  </div>
+  <div class="column" style="background-color:white;">
+    <h2>Cases</h2>
+      {%for i in pok%}
+    <h4 style="text-align: center"> {{i[2]}}</h4>
+{%endfor%}
+  </div>
+</div>
+
+
+
+</div>
+{% endblock %}
